@@ -29,4 +29,6 @@ PUT - http://localhost:5000/appointments/update
     "appointmenttext" : "checkup",
     "appointmentdoctorname": "arun"
 }
+
+
 DELETE - http://localhost:5000/delete/<int:appointmentid>
