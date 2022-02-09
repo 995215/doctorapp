@@ -2,6 +2,7 @@
 
 Check the frontend in mobile browser view
 
+Pease run "python api.py" in terminal to start doctor application
 
 Frontend
 http://localhost:5000/
