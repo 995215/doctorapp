@@ -1,10 +1,12 @@
 # doctorapp
 
-Check the frontend in mobile browser view
+
+
+create database and tables using db.sql file
 
 Pease run "python api.py" in terminal to start doctor application
 
-Frontend
+Frontend (Check the frontend in mobile browser view)
 http://localhost:5000/
 
 
