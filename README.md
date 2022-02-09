@@ -3,6 +3,12 @@
 Check the frontend in mobile browser view
 
 
+Frontend
+http://localhost:5000/
+
+
+
+
 Rest APIS
 
 GET - http://localhost:5000/doctordetails
