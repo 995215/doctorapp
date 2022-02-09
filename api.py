@@ -137,7 +137,7 @@ def user(id):
 	try:
 		conn = mysql.connect()
 		cursor = conn.cursor(pymysql.cursors.DictCursor)
-		cursor.execute("SELECT user_id id,  user_doctorname doctorname, user_doctornumber doctornumber, user_doctorappointment doctorappointment FROM home_user WHERE user_id=%s", id)
+		cursor.execute("SELECT appointmentname appointmentname, appointmentdate appointmentdate, appointmentdoctortname appointmentdoctorname, appointmentemail appointmentemail, appointmenttext appointmenttext FROM appointment WHERE appointmentid=%s", id)
 		row = cursor.fetchone()
 		resp = jsonify(row)
 		resp.status_code = 200
@@ -154,16 +154,18 @@ def update_user():
     cursor = None
     try:
         _json = request.json
-        _doctorid = _json['doctorid']
-        _doctorname = _json['doctorname']
-        _doctornumber = _json['doctornumber']
-        _doctorappointment = _json['doctorappointment']		
+        _appointmentid = _json['appointmentid']
+        _appointmentname = _json['appointmentname']
+        _appointmentdate = _json['appointmentdate']
+        _appointmentdoctorname = _json['appointmentdoctorname']	
+        _appointmentemail = _json['appointmentemail']	
+        _appointmenttext = _json['appointmenttext']		
         # validate the received values
-        if _doctorname and _doctornumber and _doctorappointment and _doctorid and request.method == 'PUT':
+        if _appointmentid and _appointmentdate and _appointmentdoctorname and _appointmentemail and _appointmenttext and request.method == 'PUT':
             print("test")
             # save edits
-            sql = "UPDATE home_user SET doctorname=%s, doctornumber=%s, doctorappointment=%s WHERE  doctorid=%s"
-            data = (_doctorname, _doctornumber, _doctorappointment, _doctorid,)
+            sql = "UPDATE appointment SET appointmentname=%s,appointmentdate=%s, appointmentdoctorname=%s, appointmentemail=%s, appointmenttext=%s WHERE  appoinmentid=%s"
+            data = (_appointmentname, _appointmentdate, _appointmentdoctorname, _appointmentemail, _appointmenttext, _appointmentid)
             conn = mysql.connect()
             cursor = conn.cursor()
             cursor.execute(sql, data)
