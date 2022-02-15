@@ -13,6 +13,7 @@ def root():
 def doctors():
     conn = None
     cursor = None
+    print("test")
     try:
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
