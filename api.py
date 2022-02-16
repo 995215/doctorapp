@@ -165,7 +165,7 @@ def update_user():
         if _appointmentid and _appointmentdate and _appointmentdoctorname and _appointmentemail and _appointmenttext and request.method == 'PUT':
             print("test")
             # save edits
-            sql = "UPDATE appointment SET appointmentname=%s,appointmentdate=%s, appointmentdoctorname=%s, appointmentemail=%s, appointmenttext=%s WHERE  appoinmentid=%s"
+            sql = "UPDATE appointment SET appointmentname=%s,appointmentdate=%s, appointmentdoctorname=%s, appointmentemail=%s, appointmenttext=%s WHERE  appointmentid=%s"
             data = (_appointmentname, _appointmentdate, _appointmentdoctorname, _appointmentemail, _appointmenttext, _appointmentid)
             conn = mysql.connect()
             cursor = conn.cursor()
